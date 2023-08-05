@@ -1,0 +1,25 @@
+<%- include('../Partials/head.ejs') %>
+<link rel="stylesheet" href="./css/user-pages.css">
+</head>
+
+<body>
+    <%- include('../Partials/header.ejs') %>
+    <%- include("../Partials/feedback.ejs") %>
+    <div class="data-form">
+        <form action="/login" method="POST">
+            <h3>Login</h3>
+            <input type="hidden" name="_csrf" value="">
+            <div class="form-floating m-0">
+                <input type="email" class="form-control" id="email" name="userEmail" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-floating m-0">
+                <input type="password" class="form-control" id="password" name="userPassword" required>
+                <label for="password">Password</label>
+            </div>
+            <button class="btn btn-light spend-smart-btn-dark mb-0" type="submit">LogIn</button>
+            <a class="link m-3" href="/ask-to-reset-password">Forget
+                Password</a>
+        </form>
+    </div>
+    <%- include('../Partials/end.ejs') %>

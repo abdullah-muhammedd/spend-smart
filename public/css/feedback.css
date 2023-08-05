@@ -1,0 +1,21 @@
+.fa-circle-check,
+.fa-circle-xmark,
+.fa-circle-exclamation {
+    color: var(--c1);
+    font-size: 10rem;
+    animation: colorChanger 1.5s linear infinite;
+}
+
+@keyframes colorChanger {
+    0% {
+        color: var(--c1);
+    }
+
+    50% {
+        color: var(--c2);
+    }
+
+    100% {
+        color: var(--c1);
+    }
+}

@@ -1,0 +1,220 @@
+.bar-icon {
+    position: absolute;
+    top: 22%;
+    right: -8.3rem;
+    font-size: 1.2rem;
+    box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    color: var(--c1);
+    border: 1px solid var(--c1);
+    border-left: none;
+}
+
+.bar-icon:hover {
+    color: #f9f9f9;
+    background-color: var(--c1);
+}
+
+.animated {
+    animation: moveLeftRight 0.4s ease-in-out infinite;
+}
+
+@keyframes moveLeftRight {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+}
+
+
+/* filters */
+body {
+    position: relative;
+}
+
+.filters {
+    width: 30%;
+    min-height:100vh;
+    position: absolute;
+    top: 0%;
+    left: -30%;
+    transition-duration: 0.3s;
+    background-color: white;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+    background-color: #f9f9f9;
+}
+
+.active-filter-bar {
+    left: 0;
+}
+
+.add-new-data {
+
+    margin: 1rem;
+}
+
+.filters form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filters form select {
+    width: 10rem;
+    margin: 1rem;
+    border: none;
+}
+
+.filters form select option:hover {
+    border-color: var(--c1);
+
+}
+
+.filters form select:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.filters form input[type="date"] {
+    width: 10rem;
+    margin: 1rem;
+    border: none;
+    position: relative;
+    overflow: visible;
+}
+
+.filters form input[type="date"]:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.filters form input[type="date"]::after {
+    content: "Pick A Date";
+    position: absolute;
+    top: -40%;
+    left: -3%;
+    background-color: white;
+    color: #7c7c7c;
+    font-weight: 300;
+    padding: 1px;
+    font-size: smaller;
+}
+
+.filters form button[type="submit"],
+.filters form button[type="reset"] {
+    width: 6rem;
+    height: 3rem;
+    margin: 0.5rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    background-color: var(--c1);
+    color: white;
+    padding: 0.5rem;
+}
+
+.filters form button[type="submit"]:hover,
+.filters form button[type="reset"]:hover {
+    background-color: white;
+    color: var(--c1);
+}
+
+/* filters */
+/* list */
+.data-list {
+    margin-top: 5rem !important;
+}
+
+
+.accordion-button:focus,
+.accordion-button:active {
+    box-shadow: none;
+    outline: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: var(--c1);
+}
+
+.accordion-item {
+    z-index: 10;
+}
+
+.accordion-button[aria-expanded="true"] {
+    background-color: var(--c1);
+    color: white;
+    z-index: 15;
+}
+
+.actions {
+    display: inline-flex;
+    width: 20%;
+    justify-content: space-evenly;
+}
+
+.actions a {
+    font-size: 0.8rem;
+    color: white;
+}
+
+.actions a:hover {
+    color: var(--c1);
+}
+
+@media (max-width: 991.98px) {
+    .bar-icon {
+        top: 15%;
+    }
+
+    .filters {
+        width: 60%;
+        justify-content: center;
+        left: -60%;
+    }
+
+    .active-filter-bar {
+        left: 0;
+    }
+
+    .actions {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .bar-icon {
+        top: 15%;
+    }
+
+    .filters {
+        width: 60%;
+        justify-content: center;
+        left: -60%;
+    }
+
+    .active-filter-bar {
+        left: 0;
+    }
+
+    .actions {
+        width: 40%;
+    }
+}
+
+/* list */

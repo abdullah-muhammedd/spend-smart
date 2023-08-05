@@ -1,0 +1,121 @@
+body {
+    background-image: url("../assets/background.jpg");
+    background-size: cover;
+    backdrop-filter: brightness(40%) blur(3px);
+}
+
+.data-container {
+    display: flex;
+}
+
+.data-container form {
+    height: fit-content;
+    width: fit-content;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    box-shadow: 11px 10px 32px -8px rgba(70, 70, 70, 1);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-container form label {
+    font-size: 1.2rem;
+}
+
+.data-container form input:not([type="checkbox"]),
+.data-container form select {
+    width: 25rem;
+    height: 3rem;
+    margin: 1rem
+}
+
+.data-container form input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+}
+
+.data-container form button[type="submit"] {
+    width: 7rem;
+    height: 3rem
+}
+
+.data-container form textarea {
+    width: 25rem;
+    height: 6rem;
+    margin: 2rem;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    resize: none;
+    padding: 1rem;
+}
+
+.data-container form textarea:focus {
+    outline: none;
+    border: 2px solid black;
+}
+
+@media (max-width: 768px) {
+
+    .data-container form label {
+            font-size: 0.8rem;
+        }
+
+    .data-container form input:not([type="checkbox"]),
+    .data-container form select {
+        width: 15rem;
+        height: 3rem;
+        margin: 0.7rem
+    }
+
+    .data-container form input[type="checkbox"] {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 1rem
+    }
+
+    .data-container form button[type="submit"] {
+        width: 4rem;
+        height: 2rem
+    }
+
+    .data-container form textarea {
+        width: 15rem;
+        height: 5rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+
+    .data-container form label {
+            font-size: 0.8rem;
+        }
+    .data-container form input:not([type="checkbox"]),
+    .data-container form select {
+        width: 15rem;
+        height: 3rem;
+        margin: 0.7rem
+    }
+
+    .data-container form input[type="checkbox"] {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 1rem
+    }
+
+    .data-container form button[type="submit"] {
+        width: 5rem;
+        height: 3rem
+    }
+
+    .data-container form textarea {
+        width: 15rem;
+        height: 5rem;
+    }
+
+}

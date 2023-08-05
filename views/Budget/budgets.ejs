@@ -1,0 +1,69 @@
+<%- include("../Partials/head.ejs") %>
+<link rel="stylesheet" href="./css/budgets.css">
+</head>
+
+<body>
+    <%- include("../Partials/header.ejs") %><a class="spend-smart-btn-dark btn ms-3 mt-3" href=" /add-budgets"><i
+            class=" fa-solid fa-square-plus"></i> Add New
+        Budget</a>
+    <div class="container">
+        <% let delay = 0.2; %>
+        <% for (let ele of budgets) { %>
+        <article>
+            <div class="card m-3 hidden-item" style="width: 95%;transition-delay:<%= delay %>s;">
+                <div class="card-header">
+                    <%= ele.name %>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <% let dt = ele.createdAt.toString().split("GMT")[0].split(" ") %>
+                    <% dt.pop(); %>
+                    <% dt.pop(); %>
+                    <% dt = dt.join("-"); %>
+                    <li class="list-group-item">Amount:
+                        <%= ele.amount %>$
+                    </li>
+                    <li class="list-group-item">Goal:
+                        <%= ele.goal %>$
+                    </li>
+                    <li class="list-group-item">Created:
+                        <%= dt %>
+                    </li>
+                    <% dt = ele.updatedAt.toString().split("GMT")[0].split(" ") %>
+                    <% dt.pop(); %>
+                    <% dt.pop(); %>
+                    <% dt = dt.join("-"); %>
+                    <li class="list-group-item">Updatd:
+                        <%= dt %>
+                    </li>
+                    <li class="list-group-item">Active:
+                        <% if (ele.active) { %>Yes
+                        <% } else { %>No
+                        <% } %>
+                    </li>
+                    <li class="list-group-item">Description:
+                        <%= ele.description %> %>
+                    </li>
+                </ul>
+                <div class="card-footer">
+                    <div class="actions">
+                        <button class="spend-smart-btn-light  btn m-1"><a href="/edit-budgets/<%= ele.id %>"><i
+                                    class="fa-solid fa-pen-to-square"></i>
+                                Edit</a></button>
+                        <button class="spend-smart-btn-light  btn m-1"
+                            onclick="deleteConfirm('/delete-budgets/<%= ele.id %>')"><i lass="fa-solid fa-trash"></i>
+                            Delete</a>
+                        </button>
+                        <button class="spend-smart-btn-light  btn m-1"><a href="/activate-budgets/<%= ele.id %>"><i
+                                    class="fa-solid fa-star"></i>
+                                Activate</a></button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <% } %>
+    </div>
+    <!-- Budgets -->
+    
+    <%- include("../Partials/end.ejs") %>

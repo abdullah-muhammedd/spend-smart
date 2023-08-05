@@ -1,0 +1,33 @@
+<%- include("../Partials/head.ejs") %>
+<link rel="stylesheet" href="./css/add-pages.css">
+</head>
+
+<body>
+    <%- include("../Partials/header.ejs") %>
+    <%- include("../Partials/feedback.ejs") %>
+    <div class="data-container container-fluid mt-5">
+
+        <form action="/add-budgets" method="POST">
+            <h3 class="m-3">Add New Budget</h3>
+            <input type="hidden" name="_csrf" value="">
+            <div class="form-floating mb-0">
+                <input type="text" class="form-control" id="name" name="budgetName" required>
+                <label for="name">Budget Name: Why do you need money?</label>
+            </div>
+            <div class="form-floating mb-0">
+                <input type="number" step="0.01" class="form-control" id="amount" name="budgetAmount" required>
+                <label for="amount">Amount: How much do you have?</label>
+            </div>
+            <div class="form-floating mb-0">
+                <input type="number" step="0.01" class="form-control" id="goal" name="budgetGoal" required>
+                <label for="goal">Goal: How mush do you need?</label>
+            </div>
+            <div class="check d-flex justify-content-center align-items-center">
+                <label for="active">Active</label>
+                <input type="checkbox" name="budgetActive" id="active">
+            </div>
+            <textarea id="description" placeholder="Description" name="budgetDescription" required></textarea>
+            <button class="btn btn-light spend-smart-btn-dark mb-0" type="submit">Add</button>
+        </form>
+    </div>
+    <%- include("../Partials/end.ejs") %>

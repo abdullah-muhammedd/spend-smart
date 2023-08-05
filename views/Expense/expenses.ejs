@@ -1,0 +1,101 @@
+<%- include("../Partials/head.ejs") %>
+<link rel="stylesheet" href="./css/data-pages.css">
+</head>
+
+<body>
+    <%- include("../Partials/header.ejs") %>
+    <h1 class="ms-3 mt-3">Expenses List</h1>
+    <article class="filters">
+        <h1 class="mt-5">Options</h1>
+        <span class="bar-icon animated" id="bar-icon"><i class="fa-solid fa-screwdriver-wrench"></i> Options</span>
+        <a class="add-new-data btn spend-smart-btn-dark" href="/add-expenses"><i class="fa-solid fa-square-plus"></i>
+            Add New
+            Expense</a>
+        <h4>Filters:</h4>
+        <form action="/filter-expenses" method="POST">
+            <input type="hidden" name="_csrf" value="">
+            <input type="date" class="form-control" name="dateFilter">
+            <div class="form-floating mb-0">
+                <select class="form-select" id="byBudget" name="budgetFilter">
+                    <option selected value="null">None</option>
+                    <% for (let ele of budgets) { %>
+                    <option value="<%= ele.id %>">
+                        <%= ele.name %>
+                    </option>
+
+
+                    <% } %>
+                </select>
+                <label for="byBudget">Select A Budget Filter</label>
+            </div>
+            <div class="form-floating mb-0">
+                <select class="form-select" id="byCategory" name="categoryFilter">
+                    <option selected value="null">None</option>
+                    <% for (let ele of categories) { %>
+                    <option value="<%= ele.id %>">
+                        <%= ele.name %>
+                    </option>
+
+
+                    <% } %>
+                </select>
+                <label for="byBudget">Select A Category Filter</label>
+            </div>
+            <button class="btn btn-light mb-0" type="submit">Filter</button>
+            <button class="btn btn-light mb-0" type="reset">Reset</button>
+        </form>
+    </article>
+    <!-- filters -->
+    <section class="data-list m-0">
+        <div class="accordion" id="accordionExample">
+            <% let delay = 0.2; %>
+            <% for (let ele of expenses) { %>
+            <% let pv = `transition-delay:${delay}s;` %>
+            <div class="accordion-item hidden-item" style=<%= pv %>>
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#<%= ele.id %>" aria-expanded="false" aria-controls="<%= ele.id %>">
+                        <%= ele.name %>
+                    </button>
+                </h2>
+                <div id="<%= ele.id %>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <% let dt = ele.updatedAt.toString().split("GMT")[0].split(" ") %>
+                        <% dt.pop(); %>
+                        <% dt.pop(); %>
+                        <% dt = dt.join("-"); %>
+                        <p>Last Update:
+                            <%= dt %>
+                        </p>
+                        <p>Amount:
+                            <%= ele.amount %>$
+                        </p>
+                        <p>Descreption:
+                            <%= ele.description %>
+                        </p>
+                        <p>Budget:
+                            <%= ele.budget.name %>
+                        </p>
+                        <p>Category:
+                            <% if (ele.category) { %>
+                            <%= ele.category.name %>
+                            <% } else { %>None
+                            <% } %>
+                        </p>
+                        <div class="actions">
+                            <button class="spend-smart-btn-light  btn m-1"
+                                onclick="deleteConfirm('/delete-expenses/<%= ele.id %>')"><i
+                                    class="fa-solid fa-trash"></i> Delete</a>
+                            </button>
+                            <button class="spend-smart-btn-light  btn m-1"><a href="/edit-expenses/<%= ele.id %>"><i
+                                        class="fa-solid fa-pen-to-square"></i>
+                                    Edit</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <% } %>
+    </section>
+    <%- include("../Partials/end.ejs") %>

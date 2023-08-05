@@ -1,0 +1,63 @@
+<%- include("../Partials/head.ejs") %>
+<link rel="stylesheet" href="./css/data-pages.css">
+</head>
+
+<body>
+    <%- include("../Partials/header.ejs") %>
+    <h1 class="ms-3 mt-3">Categories List</h1>
+    <article class="filters">
+        <h1 class="mt-5">Options</h1>
+        <span class="bar-icon animated" id="bar-icon"><i class="fa-solid fa-screwdriver-wrench"></i> Options</span>
+        <a class="add-new-data btn spend-smart-btn-dark" href="/add-categories"><i class="fa-solid fa-square-plus"></i>
+            Add New
+            Category</a>
+        <h4>Filters:</h4>
+        <form action="/filter-categories" method="POST">
+            <input type="hidden" name="_csrf" value="">
+            <input type="date" class="form-control" name="dateFilter">
+            <button class="btn btn-light mb-0" type="submit">Filter</button>
+            <button class="btn btn-light mb-0" type="reset">Reset</button>
+        </form>
+        <a href="" class="logo navbar-brand mt-5 h1"><span>Spend</span><span>Smart</span></a>
+    </article>
+
+    <section class="data-list m-0">
+        <div class="accordion" id="accordionExample">
+            <% let delay = 0.2; %>
+            <% for (let ele of categories) { %>
+            <div class="accordion-item hidden-item" style="transition-delay:<%= delay %>s">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#<%= ele.id %>" aria-expanded="false" aria-controls="<%= ele.id %>">
+                        <%= ele.name %>
+                    </button>
+                </h2>
+                <div id="<%= ele.id %>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <% let dt = ele.updatedAt.toString().split("GMT")[0].split(" ") %>
+                        <% dt.pop(); %>
+                        <% dt.pop(); %>
+                        <% dt = dt.join("-"); %>
+                        <p>Last Update:
+                            <%= dt %>
+                        </p>
+                        <p>Descreption:
+                            <%= ele.description %>
+                        </p>
+                        <div class="actions">
+                            <button class="spend-smart-btn-light  btn m-1"
+                                onclick="deleteConfirm('/delete-categories/<%= ele.id %>')"><i
+                                    class="fa-solid fa-trash"></i> Delete</a>
+                            </button>
+                            <button class="spend-smart-btn-light  btn m-1"><a href="/edit-categories/<%= ele.id %>"><i
+                                        class="fa-solid fa-pen-to-square"></i>
+                                    Edit</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <% } %>
+    </section>
+    <%- include("../Partials/end.ejs") %>

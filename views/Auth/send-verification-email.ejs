@@ -1,0 +1,23 @@
+<head>
+    <%- include('../Partials/head.ejs') %>
+    <link rel="stylesheet" href="./css/feedback.css">
+</head>
+
+<body>
+    <%- include('../Partials/header.ejs') %>
+    <div class="container text-center">
+        <div class="mt-5">
+            <i class="fa-solid fa-circle-check mb-3"></i>
+            <div class="alert alert-primary" role="alert">
+                <h1>Your Email Is Not Verified Yet Please Verify It Now To
+                    Continue Using Spend Smart</h1>
+            </div>
+            <p>Note: this can be because your verification email expired or
+                because something wrong happened</p>
+            <p>If this problem persists, please contact us</p>
+            <a href="/send-verification-email-action"><button class="btn btn-light spend-smart-btn-dark mb-0">Send
+                    Verification Email</button></a>
+        </div>
+    </div>
+    <%- include('../Partials/end.ejs') %>
+</body>

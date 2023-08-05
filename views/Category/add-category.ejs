@@ -1,0 +1,20 @@
+<%- include("../Partials/head.ejs") %>
+<link rel="stylesheet" href="./css/add-pages.css">
+</head>
+
+<body>
+    <%- include("../Partials/header.ejs") %>
+    <%- include("../Partials/feedback.ejs") %>
+    <div class="data-container container-fluid mt-5">
+        <form action="/add-categories" method="post">
+            <h1 class="m-2">Add New Category</h1>
+            <input type="hidden" name="_csrf" value="">
+            <div class="form-floating mb-0">
+                <input type="text" class="form-control" id="name" name="categoryName" required>
+                <label for="name">Category Name</label>
+            </div>
+            <textarea id="description" placeholder="Description" name="categoryDescription" required></textarea>
+            <button class="btn btn-light spend-smart-btn-dark mb-0" type="submit">Add</button>
+        </form>
+    </div>
+    <%- include("../Partials/end.ejs") %>

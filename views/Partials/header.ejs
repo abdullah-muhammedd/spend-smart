@@ -1,0 +1,50 @@
+<header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a href="/" class="logo navbar-brand mb-0 h1"><span>Spend</span><span>Smart</span></a>
+            <!-- Meue Bars For Small Screen Views -->
+            <span id="bars"><i id="bars-icon" class="fa-solid fa-bars-staggered btn btn-light"></i></span>
+            <!-- Navigation -->
+            <ul class="nav nav-pills mt-2 d-flex" id="nav">
+                <% if (isLoggedIn) { %>
+                <li class="nav-item">
+                    <a class="nav-link<% if (path === '/') { %> active-nav-link <% } %>" href="/"> Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link<% if (path === '/budgets') { %> active-nav-link <% } %>"
+                        href="/budgets">Budgets</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link<% if (path === '/categories') { %> active-nav-link <% } %>"
+                        href="/categories">Categories</a>
+                </li class="nav-item">
+                <a class="nav-link<% if (path === '/incomes') { %> active-nav-link <% } %>" href="/incomes">Incomes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link<% if (path === '/expenses') { %> active-nav-link <% } %>"
+                        href="/expenses">Expenses</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link<% if (path === '/none') { %> active-nav-link <% } %>" href="/logout"><i
+                            class="fa-solid fa-right-from-bracket" style="font-size: 1.5rem;"></i></a>
+                </li>
+                <% } else { %>
+                <li class=" nav-item">
+                    <a class="nav-link<% if (path === '/login') { %> active-nav-link <% } %>" href="/login">LogIn</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link<% if (path === '/signup') { %> active-nav-link <% } %>" href="/signup">SignUp</a>
+                </li>
+
+
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,54 @@
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ECF0F1;
+        }
+
+        .container {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #E74C3C;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #2C3E50;
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498DB;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #2980B9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>SpendSmart</h1>
+        <h2>This is a verification email</h2>
+
+        <p>Please click the following link to verify your email address:</p>
+
+        <a
+            href="http://localhost:3000/verify-email/<%= token %>">Verify
+            Email</a>
+    </div>
+</body>

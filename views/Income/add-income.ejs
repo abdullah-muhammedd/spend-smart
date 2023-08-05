@@ -1,0 +1,58 @@
+<%- include("../Partials/head.ejs") %>
+<link rel="stylesheet" href="./css/add-pages.css">
+</head>
+
+<body>
+    <%- include("../Partials/header.ejs") %>
+    <% if (budgets.length <= 0 || categories.length <= 0) { %>
+    <div class="alert alert-danger m-2" role="alert">
+        You need budgets and categories to add incomes
+    </div>
+    <% } else { %>
+    <%- include("../Partials/feedback.ejs") %>
+    <div class="data-container container-fluid mt-5">
+        <form action="/add-incomes" method="post">
+            <h1 class="m-2">Add New Income</h1>
+            <input type="hidden" name="_csrf" value="">
+            <div class="form-floating mb-0">
+                <input type="text" class="form-control" id="name" name="incomeName" required>
+                <label for="name">Income Name</label>
+            </div>
+            <div class="form-floating mb-0">
+                <input type="number" step="0.01" class="form-control" id="amount" name="incomeAmount" required>
+                <label for="amount">Amount</label>
+            </div>
+            <div class="form-floating mb-0">
+                <select class="form-select" id="budget" name="incomeBudgetId" required>
+                    <option selected value="null">None</option>
+                    <% for (let ele of budgets) { %>
+                    <option value="<%= ele.id %>">
+                        <%= ele.name %>
+                    </option>
+
+
+                    <% } %>
+                </select>
+                <label for="budget">Budget</label>
+            </div>
+            <div class="form-floating mb-0">
+                <select class="form-select" id="category" name="incomeCategoryId" required>
+                    <option selected value="null">None</option>
+                    <% for (let ele of categories) { %>
+                    <option value="<%= ele.id %>">
+                        <%= ele.name %>
+                    </option>
+
+
+                    <% } %>
+                </select>
+                <label for="category">Category</label>
+            </div>
+            <textarea id="description" placeholder="Description" name="incomeDescription" required></textarea>
+            <button class="btn btn-light spend-smart-btn-dark mb-0" type="submit">Add</button>
+        </form>
+    </div>
+
+
+    <% } %>
+    <%- include("../Partials/end.ejs") %>

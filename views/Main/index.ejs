@@ -1,0 +1,53 @@
+<%- include("../Partials/head.ejs")%>
+</head>
+
+<body>
+    <%- include("../Partials/header.ejs")%>
+    <h2 class="m-3">Hello <%= userName %></h2>
+    <h3 class="m-3">Stats</h3>
+    <div>
+        <canvas lazy id="myChart" class="ms-auto me-auto" style="width: 70%; height: 50%;"></canvas>
+    </div>
+    <!-- grid -->
+    <h3 class="m-3">History</h3>
+    <section class="m-3 row">
+        <article class="col-12 col-sm-4 hidden-item" style="transition-delay: 0.2s;">
+            <div class="card border-dark mx-auto xs-3 mb-3 " style="max-width: 18rem;">
+                <div class="card-header">Recent Budgets</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <% for(let ele of budgets){%>
+                        <li class="list-group-item"><%= ele.name %> <%if(ele.active){%> <i class="fa-solid fa-star"> <%}%></i></li>
+                        <%}%>
+                    </ul>
+                    <a class="spend-smart-btn-light btn btn-light" href="/budgets">More</a>
+                </div>
+        </article>
+        <article class="col-12 col-sm-4 hidden-item" style="transition-delay: 0.4s;">
+            <div class="card border-dark mx-auto mb-3" style="max-width: 18rem;">
+                <div class="card-header">Recent Incomes</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <% for(let ele of incomes){%>
+                        <li class="list-group-item"><%= ele.name %></li>
+                        <%}%>
+                    </ul>
+                    <a class="spend-smart-btn-light btn btn-light" href="/incomes">More</a>
+                </div>
+            </div>
+        </article>
+        <article class="col-12 col-sm-4 hidden-item" style="transition-delay: 0.6s;">
+            <div class="card border-dark mx-auto mb-3" style="max-width: 18rem;">
+                <div class="card-header">Recent Expenses</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <% for(let ele of expenses){%>
+                        <li class="list-group-item"><%= ele.name %></li>
+                        <%}%>
+                    </ul>
+                    <a class="spend-smart-btn-light  btn btn-light" href="/expenses">More</a>
+                </div>
+        </article>
+    </section>
+    <!-- grid -->
+                        <%- include("../Partials/end.ejs")%>

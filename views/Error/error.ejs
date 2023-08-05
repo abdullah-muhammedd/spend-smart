@@ -1,0 +1,26 @@
+<head>
+    <%- include('../Partials/head.ejs') %>
+    <link rel="stylesheet" href="./css/feedback.css">
+</head>
+
+<body>
+    <%- include('../Partials/header.ejs') %>
+    <div class="container text-center">
+        <div class="mt-5">
+            <i class="fa-solid fa-circle-exclamation mb-3"></i>
+            <% if (error) { %>
+            <div class="alert alert-danger" role="alert">
+                <h1>
+                    <%= error %>
+                </h1>
+            </div>
+            <p>Note: Internal server error due to unauthorized access.</p>
+            <p>Note: Invalid verification or password reset token may cause this
+                error.</p>
+            <p>Note: Please contact us if the problem persists.</p>
+
+            <% } %>
+        </div>
+    </div>
+    <%- include('../Partials/end.ejs') %>
+</body>
