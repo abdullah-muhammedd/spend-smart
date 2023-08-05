@@ -1,6 +1,6 @@
 # Spend Smart - Personal Budget Tracker
 
-![Banner](https://raw.githubusercontent.com/abdullah-muhammedd/banners/master/Blue%20Purple%20Gradient%20Grand%20Opening%20Medium%20Banner.gif?token=GHSAT0AAAAAACCKSCWCLJJYN2QMQMOQT2ZIZGNSOUA)
+![Banner](https://github.com/abdullah-muhammedd/banners/blob/master/Blue%20Purple%20Gradient%20Grand%20Opening%20Medium%20Banner.gif?raw=true)
 
 ## Overview
 
