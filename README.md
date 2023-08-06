@@ -134,7 +134,7 @@ npm run dev
 
 ## Demo
 
-Comming Soon !!!!
+https://github.com/abdullah-muhammedd/spend-smart/assets/78245792/8c35cf82-18a1-4612-8e41-feedbabd3782
 
 ## Cloning And Feedback
 
