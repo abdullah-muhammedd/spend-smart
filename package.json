@@ -5,6 +5,9 @@
   "main": "app.js",
   "author": "Abdullah Muhammed",
   "license": "MIT",
+  "engines": {
+    "node": ">=16.14"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
