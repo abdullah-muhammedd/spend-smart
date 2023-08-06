@@ -1,6 +1,6 @@
 # Spend Smart - Personal Budget Tracker
 
-![Banner](https://raw.githubusercontent.com/abdullah-muhammedd/banners/master/Blue%20Purple%20Gradient%20Grand%20Opening%20Medium%20Banner.gif?token=GHSAT0AAAAAACCKSCWCLJJYN2QMQMOQT2ZIZGNSOUA)
+![Banner](https://github.com/abdullah-muhammedd/banners/blob/master/Blue%20Purple%20Gradient%20Grand%20Opening%20Medium%20Banner.gif?raw=true)
 
 ## Overview
 
@@ -132,9 +132,11 @@ npm run dev
 
 **Note:** This command uses **nodemon** to start the server; make sure it is installed.
 
-## Demo
+## Preview
 
-// Add a demo video here (if available)
+
+https://github.com/abdullah-muhammedd/spend-smart/assets/78245792/7ae85321-cd71-4b35-846c-4aae5a60bc97
+
 
 ## Cloning And Feedback
 
