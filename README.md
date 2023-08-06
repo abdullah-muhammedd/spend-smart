@@ -132,12 +132,10 @@ npm run dev
 
 **Note:** This command uses **nodemon** to start the server; make sure it is installed.
 
-## Demo
+## Preview
 
-<video width="640" height="360" controls>
-  <source src="https://github.com/abdullah-muhammedd/banners/blob/master/Untitled%20video%20-%20Made%20with%20Clipchamp%20(1).mkv" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+
+https://github.com/abdullah-muhammedd/spend-smart/assets/78245792/7ae85321-cd71-4b35-846c-4aae5a60bc97
 
 
 ## Cloning And Feedback
