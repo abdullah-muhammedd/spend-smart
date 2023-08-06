@@ -137,7 +137,9 @@ npm run dev
 
 https://github.com/abdullah-muhammedd/spend-smart/assets/78245792/7ae85321-cd71-4b35-846c-4aae5a60bc97
 
-
+## Demo
+- App is deployed on **Render** using a **MySQL** database that is hosted on **CleverCloud**
+- You Can Use it From [SpendSmart](https://spend-smart-x8z3.onrender.com/)
 ## Cloning And Feedback
 
 - You are welcome to clone this repository and use it as a reference or as a starting point for your own projects.
