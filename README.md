@@ -134,7 +134,11 @@ npm run dev
 
 ## Demo
 
-https://github.com/abdullah-muhammedd/spend-smart/assets/78245792/8c35cf82-18a1-4612-8e41-feedbabd3782
+<video width="640" height="360" controls>
+  <source src="https://github.com/abdullah-muhammedd/banners/blob/master/Untitled%20video%20-%20Made%20with%20Clipchamp%20(1).mkv" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
 ## Cloning And Feedback
 
